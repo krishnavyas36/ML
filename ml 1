@@ -1,0 +1,120 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[4]:
+
+
+import pandas as pd
+list = pd.Series([7,11,13,17])
+print(list)
+
+
+# In[5]:
+
+
+elements = pd.Series(100.0, range(5))
+print(elements)
+
+
+# In[6]:
+
+
+import numpy as np
+
+np.random.seed(2023) 
+random_numbers = np.random.randint(0, 100, 20)
+series = pd.Series(random_numbers)
+print(series.describe())
+
+
+# In[7]:
+
+
+temperature = pd.Series([98.6, 98.9, 100.2, 97.9], index=['Julie', 'Charlie', 'Sas', 'Andrea'])
+print(temperature)
+
+
+# In[8]:
+
+
+temp_dic = {'Julie': 98.6, 'Charlie': 98.9, 'Sas': 100.2, 'Andrea': 97.9}
+temp_from_dict = pd.Series(temp_dic)
+print(temp_from_dict)
+
+
+# In[24]:
+
+
+data = {'Maxine': [25, 60, 36 ], 'James': [22, 65, 56], 'Amanda': [27, 49, 51]}
+temp_df = pd.DataFrame(data)
+print(temp_df)
+
+
+# In[25]:
+
+
+data = {'Maxine': [25, 68, 36], 'James': [22, 65, 56], 'Amanda': [27, 49, 51]}
+temp_df = pd.DataFrame(data)
+list = ['Morning', 'Afternoon', 'Evening']
+temp_index = pd.DataFrame(data, index=list)
+print(temp_index)
+
+
+
+
+# In[26]:
+
+
+maxine_temp = temp_df['Maxine']
+print(maxine_temp)
+
+
+# In[27]:
+
+
+data = {'Maxine': [25, 68, 36], 'James': [22, 65, 56], 'Amanda': [27, 49, 51]}
+temp_df = pd.DataFrame(data)
+morning_evening_temp = temp_index.loc[['Morning', 'Evening']]
+print(morning_evening_temp)
+
+
+# In[28]:
+
+
+amanda_maxine_temperatures = temp_df[['Amanda', 'Maxine']]
+print(amanda_maxine_temperatures)
+
+
+# In[30]:
+
+
+amanda_maxine_morning_afternoon = temp_index.loc[['Morning', 'Afternoon'], ['Amanda', 'Maxine']]
+print(amanda_maxine_morning_afternoon)
+
+
+# In[31]:
+
+
+temperatures_stats = temperatures_df.describe()
+print(temperatures_stats)
+
+
+# In[32]:
+
+
+sorted_temperatures = temperatures_df.sort_index(axis=1)
+print(sorted_temperatures)
+
+
+# In[33]:
+
+
+sorted_temperatures = temperatures_df.sort_index(axis=1)
+print(sorted_temperatures)
+
+
+# In[ ]:
+
+
+
+
